@@ -1,26 +1,80 @@
+
+// iPhone cart 
+
 const plusBtn = document.getElementById("plus-btn");
 plusBtn.addEventListener('click',function(){
-    const amountValue = document.getElementById("amount-value").value;
-    const amountNumber = parseFloat(amountValue);
-    const totalAmount = amountNumber + 1;
-    document.getElementById("amount-value").value = totalAmount;
+
+    const one = 1;
+    inputValueUpdate("amount-value", +1 * one);
 
     const iphonePrice = 1219;
-    const phonePrice = document.getElementById("phone-price").innerText;
-    const phonePriceNumber = parseFloat(phonePrice);
-    totalPrice = phonePriceNumber + iphonePrice;
-    document.getElementById("phone-price").innerText = totalPrice;
-
-
-    const subtotalCost = document.getElementById("subtotal-cost").innerText;
-    const subtotalCostNumber = parseFloat(subtotalCost);
-    totalSubCost = iphonePrice + subtotalCostNumber;
-    document.getElementById("subtotal-cost").innerText = totalSubCost;
-
-
-
-    const totalCost = document.getElementById("total-cost").innerText;
-    const totalCostNumber = parseFloat(totalCost);
-    const fullTotalCost = iphonePrice + totalCostNumber;
-    document.getElementById("total-cost").innerText = fullTotalCost;
+    spanTextUpdate("phone-price",iphonePrice);
+    spanTextUpdate("subtotal-cost",iphonePrice);
+    spanTextUpdate("total-cost",iphonePrice);
 })
+
+const minusBtn = document.getElementById("minus-btn");
+minusBtn.addEventListener('click',function(){
+
+    const one = 1;
+    inputValueUpdate("amount-value", -1 * one);
+
+    const iphonePrice = 1219;
+    spanTextUpdate("phone-price", -1 * iphonePrice);
+    spanTextUpdate("subtotal-cost", -1 * iphonePrice);
+    spanTextUpdate("total-cost", -1 * iphonePrice);  
+})
+
+function inputValueUpdate(id,one){
+    const inputValue = document.getElementById(id).value;
+    const inputValueNumber = parseFloat(inputValue);
+    totalValue = one + inputValueNumber;
+    document.getElementById(id).value = totalValue;
+}
+
+function spanTextUpdate(id,iphonePrice){
+    const price = document.getElementById(id).innerText;
+    const priceNumber = parseFloat(price);
+    totalPrice = iphonePrice + priceNumber;
+    document.getElementById(id).innerText = totalPrice;
+}
+
+// phoneCase cart 
+
+const plusBtn = document.getElementById("plus-btn");
+plusBtn.addEventListener('click',function(){
+
+    const one = 1;
+    inputValueUpdate("amount-value", +1 * one);
+
+    const iphonePrice = 1219;
+    spanTextUpdate("phone-price",iphonePrice);
+    spanTextUpdate("subtotal-cost",iphonePrice);
+    spanTextUpdate("total-cost",iphonePrice);
+})
+
+const minusBtn = document.getElementById("minus-btn");
+minusBtn.addEventListener('click',function(){
+
+    const one = 1;
+    inputValueUpdate("amount-value", -1 * one);
+
+    const iphonePrice = 1219;
+    spanTextUpdate("phone-price", -1 * iphonePrice);
+    spanTextUpdate("subtotal-cost", -1 * iphonePrice);
+    spanTextUpdate("total-cost", -1 * iphonePrice);  
+})
+
+function inputValueUpdate(id,one){
+    const inputValue = document.getElementById(id).value;
+    const inputValueNumber = parseFloat(inputValue);
+    totalValue = one + inputValueNumber;
+    document.getElementById(id).value = totalValue;
+}
+
+function spanTextUpdate(id,iphonePrice){
+    const price = document.getElementById(id).innerText;
+    const priceNumber = parseFloat(price);
+    totalPrice = iphonePrice + priceNumber;
+    document.getElementById(id).innerText = totalPrice;
+}
