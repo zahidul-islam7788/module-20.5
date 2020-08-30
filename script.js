@@ -41,28 +41,28 @@ function spanTextUpdate(id,iphonePrice){
 
 // phoneCase cart 
 
-const plusBtn = document.getElementById("plus-btn");
-plusBtn.addEventListener('click',function(){
+const casePlusBtn = document.getElementById("case-plusBtn");
+casePlusBtn.addEventListener('click',function(){
 
     const one = 1;
-    inputValueUpdate("amount-value", +1 * one);
+    inputValueUpdate("case-amount-value", +1 * one);
 
-    const iphonePrice = 1219;
-    spanTextUpdate("phone-price",iphonePrice);
-    spanTextUpdate("subtotal-cost",iphonePrice);
-    spanTextUpdate("total-cost",iphonePrice);
+    const casePrice = 59;
+    spanTextUpdate("case-price",casePrice);
+    spanTextUpdate("subtotal-cost",casePrice);
+    spanTextUpdate("total-cost",casePrice);
 })
 
-const minusBtn = document.getElementById("minus-btn");
-minusBtn.addEventListener('click',function(){
+const caseMinusBtn = document.getElementById("case-minusBtn");
+caseMinusBtn.addEventListener('click',function(){
 
     const one = 1;
-    inputValueUpdate("amount-value", -1 * one);
+    inputValueUpdate("case-amount-value", -1 * one);
 
-    const iphonePrice = 1219;
-    spanTextUpdate("phone-price", -1 * iphonePrice);
-    spanTextUpdate("subtotal-cost", -1 * iphonePrice);
-    spanTextUpdate("total-cost", -1 * iphonePrice);  
+    const casePrice = 59;
+    spanTextUpdate("case-price", -1 * casePrice);
+    spanTextUpdate("subtotal-cost", -1 * casePrice);
+    spanTextUpdate("total-cost", -1 * casePrice);  
 })
 
 function inputValueUpdate(id,one){
@@ -72,9 +72,9 @@ function inputValueUpdate(id,one){
     document.getElementById(id).value = totalValue;
 }
 
-function spanTextUpdate(id,iphonePrice){
+function spanTextUpdate(id,casePrice){
     const price = document.getElementById(id).innerText;
     const priceNumber = parseFloat(price);
-    totalPrice = iphonePrice + priceNumber;
+    totalPrice = casePrice + priceNumber;
     document.getElementById(id).innerText = totalPrice;
 }
